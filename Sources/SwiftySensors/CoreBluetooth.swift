@@ -34,8 +34,8 @@ extension CBCharacteristic {
      - returns: true if write performed
      */
     @discardableResult public func write(_ data: Data, writeType: CBCharacteristicWriteType) -> Bool {
-        if service.peripheral.state == .connected {
-            service.peripheral.writeValue(data, for: self, type: writeType)
+        if service?.peripheral?.state == .connected {
+            service?.peripheral?.writeValue(data, for: self, type: writeType)
             return true
         }
         return false
